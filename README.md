@@ -8,6 +8,7 @@ Once opened in Protégé, users can:
 - Examine object properties modeling relationships (e.g., causes, impacts, occursIn).
 - View individuals as example instances of disaster events.
 - Use the built-in SPARQL tab to run custom queries over the ontology and test reasoning-based use cases.
+
 As a companion to the associated research paper, this repository also includes a supplementary material PDF that provides in-depth documentation of the ontology.
 
 
