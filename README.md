@@ -22,7 +22,7 @@ Authors: Lakshmi S. Gopal<sup>1</sup>, Hemalatha Thirugnanam<sup>1</sup>, Tejal 
 
 <sup>2</sup>School of Computing, Newcastle University, Newcastle Upon Tyne, UK
 
-Please cite this work appropriately if you use or refer to the ontology in your research or applications. The official publication and DOI will be updated here once available.
+DOI: https://doi.org/10.5281/zenodo.15752551
 
 
 
