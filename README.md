@@ -15,8 +15,8 @@ As a companion to the associated research paper, this repository also includes a
 This ontology and its associated resources are developed as part of the research work titled:
 
 "A Generic Ontology-Driven Information Extraction and Impact Analysis of Hazards: A Case Study on the 2024 Wayanad Landslides"
-Authors:
-Lakshmi S. Gopal<sup>1</sup>, Hemalatha Thirugnanam<sup>1</sup>, Tejal Shah<sup>2</sup>, Maneesha Vinodini Ramesh<sup>1</sup>
+
+Authors: Lakshmi S. Gopal<sup>1</sup>, Hemalatha Thirugnanam<sup>1</sup>, Tejal Shah<sup>2</sup>, Maneesha Vinodini Ramesh<sup>1</sup>
 
 <sup>1</sup>Center for Wireless Networks & Applications (AWNA), Amrita Vishwa Vidyapeetham, Amritapuri, India
 
