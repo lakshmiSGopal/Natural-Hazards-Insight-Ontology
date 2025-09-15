@@ -10,6 +10,7 @@ Once opened in Protégé, users can:
 - Use the built-in SPARQL tab to run custom queries over the ontology and test reasoning-based use cases.
 
 As a companion to the associated research paper, this repository also includes a supplementary material PDF that provides in-depth documentation of the ontology.
+The final module of this work is an interactive dashboard, where the results of the Information Extraction (IE) system are presented for exploration and analysis. The dashboard is developed with Looker Studio, which can be accessed here: https://lookerstudio.google.com/reporting/3015dd47-e21d-4286-9893-1157c4f30d1a
 
 ## Citation and Acknowledgment
 This ontology and its associated resources are developed as part of the research work titled:
