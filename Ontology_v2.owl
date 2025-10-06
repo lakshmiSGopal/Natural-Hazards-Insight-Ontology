@@ -1,0 +1,3481 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY disasterontology_v1 "http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#"
+     xml:base="http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:disasterontology_v1="http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasDep -->
+
+    <owl:AnnotationProperty rdf:about="&disasterontology_v1;hasDep"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasPoS -->
+
+    <owl:AnnotationProperty rdf:about="&disasterontology_v1;hasPoS"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#affectedBy -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;affectedBy">
+        <rdfs:range rdf:resource="&disasterontology_v1;Disaster"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#caused -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;caused">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#causes -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;causes">
+        <rdfs:comment xml:lang="en">Casual Relationship</rdfs:comment>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;Casualty"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Damage"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Rescue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#due -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;due">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#generate -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;generate">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasAction -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasAction">
+        <rdfs:range rdf:resource="&disasterontology_v1;Aftermath"/>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasActor -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasActor">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasDate -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasDate">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasDisaster -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasDisaster">
+        <rdfs:range rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasLocation">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasQuantity -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasQuantity">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasRecipient -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasRecipient">
+        <rdfs:range rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#hasResource -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;hasResource">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#induced -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;induced">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#lead -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;lead">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#locatedIn -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;locatedIn">
+        <rdfs:comment xml:lang="en">Spatial Relationship</rdfs:comment>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#occurredOn -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;occurredOn">
+        <rdfs:comment xml:lang="en">Temporal Relationship
+</rdfs:comment>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#quantifiedBy -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;quantifiedBy">
+        <rdfs:comment xml:lang="en">Quantification Relationship</rdfs:comment>
+        <rdfs:range rdf:resource="&disasterontology_v1;Quantity"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;Casualty"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Damage"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Rescue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#reliefBy -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;reliefBy">
+        <rdfs:comment xml:lang="en">Response Relationship</rdfs:comment>
+        <rdfs:domain rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#requiredResource -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;requiredResource">
+        <rdfs:comment xml:lang="en">Resource relationship</rdfs:comment>
+        <rdfs:range rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#rescuedBy -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;rescuedBy">
+        <rdfs:comment xml:lang="en">Response Relationship</rdfs:comment>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Event"/>
+        <rdfs:range rdf:resource="&disasterontology_v1;Support"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#responsible -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;responsible">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#result -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;result">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#triggered -->
+
+    <owl:ObjectProperty rdf:about="&disasterontology_v1;triggered">
+        <rdfs:subPropertyOf rdf:resource="&disasterontology_v1;causes"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#affected -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;affected">
+        <rdfs:domain rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#agricultureDamage -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;agricultureDamage">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Agricultural"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;float"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#damageCount -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;damageCount">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Damage"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#deathCount -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;deathCount">
+        <hasPoS xml:lang="en">CD
+</hasPoS>
+        <hasPoS xml:lang="en">NUM</hasPoS>
+        <hasDep xml:lang="en">amod</hasDep>
+        <hasDep xml:lang="en">conj</hasDep>
+        <hasDep xml:lang="en">nmod</hasDep>
+        <hasDep xml:lang="en">nummod</hasDep>
+        <hasDep xml:lang="en">root</hasDep>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;Dead"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Death"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Die"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Fatal"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Kill"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Mortal"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#disasterEvent -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;disasterEvent">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#environmentDamage -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;environmentDamage">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Environment"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#eventAction -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;eventAction">
+        <rdfs:range rdf:resource="&xsd;string"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;ActionVerb"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Casualty"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#eventDate -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;eventDate">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Date"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#eventPeriod -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;eventPeriod">
+        <rdfs:domain rdf:resource="&disasterontology_v1;TemporalData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#infrastructureDamage -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;infrastructureDamage">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#injuredCount -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;injuredCount">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;Injure"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Strand"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Wound"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#missingCount -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;missingCount">
+        <hasPoS xml:lang="en">CD</hasPoS>
+        <hasPoS xml:lang="en">NUM</hasPoS>
+        <hasDep xml:lang="en">amod</hasDep>
+        <hasDep xml:lang="en">conj</hasDep>
+        <hasDep xml:lang="en">nmod</hasDep>
+        <hasDep xml:lang="en">nummod</hasDep>
+        <rdfs:domain rdf:resource="&disasterontology_v1;Miss"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&xsd;integer"/>
+                    <rdf:Description rdf:about="&xsd;string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#placeName -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;placeName">
+        <rdfs:domain rdf:resource="&disasterontology_v1;SpatialData"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#rescueBy -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;rescueBy">
+        <rdfs:domain rdf:resource="&disasterontology_v1;Support"/>
+        <rdfs:range rdf:resource="&xsd;string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#rescueCount -->
+
+    <owl:DatatypeProperty rdf:about="&disasterontology_v1;rescueCount">
+        <rdfs:range rdf:resource="&xsd;integer"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="&disasterontology_v1;Aid"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Evacuate"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Recover"/>
+                    <rdf:Description rdf:about="&disasterontology_v1;Rescue"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ActionVerb -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ActionVerb">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Aftermath"/>
+        <rdfs:comment>Represents verbs that describe actions occurring during or after a disaster event. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#AffectedEntity -->
+
+    <owl:Class rdf:about="&disasterontology_v1;AffectedEntity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#After -->
+
+    <owl:Class rdf:about="&disasterontology_v1;After">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Aftermath -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Aftermath">
+        <rdfs:comment xml:lang="en">The period following a catastrophic event, characterized by casualties, infrastructural damage, agricultural losses, and ongoing recovery efforts.
+Includes casualties, damages including infrastructural, agricultural, rescue operations, resource requirements.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Agricultural -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Agricultural">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Damage"/>
+        <hasPoS>ADJ</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Aid -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Aid">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Airport -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Airport">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Alarm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Alarm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Alert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Alert -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Alert">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Emergency"/>
+        <rdfs:comment xml:lang="en">An alert is a notification or warning issued to inform individuals or communities about potential hazards, emergencies, or significant events that may affect their safety, well-being, or interests. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Animal -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Animal">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ApproxCount -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ApproxCount">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#AreaOfImpact -->
+
+    <owl:Class rdf:about="&disasterontology_v1;AreaOfImpact">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;SpatialData"/>
+        <rdfs:comment xml:lang="en">The &quot;area of impact&quot; refers to the geographic region or area affected by the disaster&apos;s effects, such as damage, destruction, or disruption caused by the event. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Army -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Army">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#AsOfNow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;AsOfNow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Assist -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Assist">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#AtPresent -->
+
+    <owl:Class rdf:about="&disasterontology_v1;AtPresent">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#AtmosphericDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;AtmosphericDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Biotic -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Biotic">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Ecological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#BlastInduced -->
+
+    <owl:Class rdf:about="&disasterontology_v1;BlastInduced">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Explosion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#BlastTremor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;BlastTremor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Explosion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Blizzard -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Blizzard">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A blizzard is a severe weather condition characterized by low temperatures, strong winds, and blowing snow, resulting in reduced visibility and potentially dangerous conditions. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Body -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Body">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Boy -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Boy">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Bridge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Bridge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Building -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Building">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#BuildingCollapse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;BuildingCollapse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Collapse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Bushfire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Bushfire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ForestFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Camp -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Camp">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#CanopyFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;CanopyFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;CrownFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Carbon -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Carbon">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GlobalEmission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#CarbonNeutrality -->
+
+    <owl:Class rdf:about="&disasterontology_v1;CarbonNeutrality">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;NetZero"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Casualty -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Casualty">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Aftermath"/>
+        <rdfs:comment xml:lang="en">In the context of disasters, a &quot;casualty&quot; refers to an individual who has been harmed, injured, or killed as a result of the disaster&apos;s effects. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cattle -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cattle">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cause -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cause">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Caution -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Caution">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cellular -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cellular">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cereal -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cereal">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Child -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Child">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Children -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Children">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#City -->
+
+    <owl:Class rdf:about="&disasterontology_v1;City">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ClimateChange -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ClimateChange">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en"> long-term shifts in temperatures and weather patterns. 
+Trigger: Human activities
+Types: Global emissions, global warming, net zero</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#CloseRange -->
+
+    <owl:Class rdf:about="&disasterontology_v1;CloseRange">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Clothes -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Clothes">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cloudburst -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cloudburst">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;HeavyRainfall"/>
+        <rdfs:comment xml:lang="en">A cloudburst is a sudden and intense rainfall event characterized by a rapid and exceptionally heavy downpour over a relatively small area. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Coastal -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Coastal">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Collapse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Collapse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Earthquake"/>
+        <hasPoS>VERB</hasPoS>
+        <rdfs:comment xml:lang="en">A collapse earthquake, also known as a collapse-induced earthquake or a mine collapse earthquake, is a seismic event triggered by the sudden collapse of underground cavities, such as mines, tunnels, or caverns. </rdfs:comment>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#College -->
+
+    <owl:Class rdf:about="&disasterontology_v1;College">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Company -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Company">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Coordinate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Coordinate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cordinates -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cordinates">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Country -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Country">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Crisis -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Crisis">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Crop -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Crop">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#CrownFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;CrownFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fire"/>
+        <rdfs:comment xml:lang="en">A crown fire is a type of wildfire characterized by flames that spread rapidly through the tops, or crowns, of trees within a forest or other wooded area. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Currently -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Currently">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Cyclone -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Cyclone">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A cyclone is a large-scale weather system characterized by inward spiraling winds rotating around a low-pressure center, typically accompanied by thunderstorms, heavy rain, and sometimes thunder and lightning.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Dam -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Dam">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Damage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Damage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Aftermath"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Date -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Date">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DateQuantity -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DateQuantity">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Dead -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Dead">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Death -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Death">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DebrisFall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DebrisFall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DebrisFlow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DebrisFlow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DebrisSlide -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DebrisSlide">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DebrisSlump -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DebrisSlump">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Deluge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Deluge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;HeavyRainfall"/>
+        <rdfs:comment xml:lang="en">A deluge refers to a prolonged and widespread rainfall event characterized by exceptionally heavy and continuous precipitation over a large area.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Demand -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Demand">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Deploy -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Deploy">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Destroy -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Destroy">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Destruction -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Destruction">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Devastate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Devastate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Die -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Die">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Disaster -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Disaster">
+        <rdfs:comment xml:lang="en">A disaster is an event whose timing is unexpected and whose consequences are seriously destructive.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Distant -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Distant">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tsunami"/>
+        <rdfs:comment xml:lang="en">A distant tsunami is a type of tsunami that originates from a seismic event, such as an earthquake or volcanic eruption, that occurs far away from the affected coastline.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DistantCoast -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DistantCoast">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Distant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#DistantSea -->
+
+    <owl:Class rdf:about="&disasterontology_v1;DistantSea">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Distant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Distribute -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Distribute">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#District -->
+
+    <owl:Class rdf:about="&disasterontology_v1;District">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;SpatialData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Doctor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Doctor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Downpour -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Downpour">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;HeavyRainfall"/>
+        <rdfs:comment xml:lang="en">A downpour is a sudden, heavy, and often intense rainfall characterized by a significant amount of precipitation falling in a short period of time. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Drainage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Drainage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Drought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Drought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en">A deficiency of precipitation over an extended period of time (usually a season or more), resulting in a water shortage.
+Triggers: Absence of precipitation, climate change, fire.
+Types: Meteorological, Hydrological, Agricultural, Ecological, Socioeconomic.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#EarlyWarning -->
+
+    <owl:Class rdf:about="&disasterontology_v1;EarlyWarning">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Warning"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#EarthFall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;EarthFall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#EarthFlow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;EarthFlow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#EarthSlump -->
+
+    <owl:Class rdf:about="&disasterontology_v1;EarthSlump">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#EarthTopple -->
+
+    <owl:Class rdf:about="&disasterontology_v1;EarthTopple">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Topple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Earthquake -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Earthquake">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en"> The sudden release of strain energy in the Earth’s crust, resulting in waves of shaking that radiate outwards from the earthquake source. 
+Triggers: Seismic waves, plate movement, volcano, human induced quaking.
+Types: Tectonic, volcanic, collapse, explosion.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Ecological -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Ecological">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Drought"/>
+        <rdfs:comment xml:lang="en">Ecological drought refers to a prolonged period of abnormally dry conditions that significantly affects ecosystems and their associated biodiversity.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Ecosystem -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Ecosystem">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Ecological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Effort -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Effort">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Elderly -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Elderly">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>ADJ</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Electric -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Electric">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Emergency -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Emergency">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en">An immediate threat requiring rapid response actions such as alerts, warnings, evacuations, and public assistance to ensure safety and mitigate damage.
+Includes alerts, warnings, evacuations, public requirements, forecasts, safety, routes.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Environment -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Environment">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Damage"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>PROPN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Environmental -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Environmental">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Ecological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Essential -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Essential">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Evacuate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Evacuate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Event -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Event"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ExactCount -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ExactCount">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Explosion -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Explosion">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Earthquake"/>
+        <rdfs:comment xml:lang="en">An explosion earthquake is a seismic event caused by the detonation of explosives or human-made explosions, such as those used in mining, construction, or military activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Facilitate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Facilitate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Factory -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Factory">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Fall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Fall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Landslide"/>
+        <rdfs:comment xml:lang="en">Falls typically occur on steep slopes or cliffs where weathering, erosion, or other factors weaken the rock mass, causing it to break away from the slope face. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Family -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Family">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>ROOT</hasDep>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FarField -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FarField">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Distant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Fatal -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Fatal">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasDep>amod</hasDep>
+        <hasPoS>ADJ</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FaultMovement -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FaultMovement">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Volcanic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FaultRupture -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FaultRupture">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tectonic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FaultSlip -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FaultSlip">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tectonic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FewDaysAgo -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FewDaysAgo">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Fire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Fire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en">Any instance of open flame or other burning in a place not intended to contain the burning or in an uncontrolled manner.
+Triggers: Lightning strikes in forests, volcanoes, man made fires.
+Types: Forest fire - crown fires, surface fires, ground fires, other man-made fires.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FlashFlood -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FlashFlood">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flood"/>
+        <rdfs:comment xml:lang="en">In the context of floods, a &quot;flash flood&quot; refers to a rapid and sudden onset of flooding, typically occurring within a very short period, often less than six hours. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Flood -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Flood">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Flow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Flow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Flows -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Flows">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Landslide"/>
+        <rdfs:comment xml:lang="en">In the context of landslides, a &quot;flow&quot; refers to the movement of material, such as soil, rock, or debris, downslope due to the force of gravity. Landslide flows can vary in speed and consistency, ranging from slow-moving slumps to rapid and destructive debris flows. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Following -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Following">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Food -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Food">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Forecast -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Forecast">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Emergency"/>
+        <rdfs:comment xml:lang="en">A forecast is a prediction or estimation of future conditions or events based on analysis of current and historical data, scientific models, and expert judgment. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ForestFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ForestFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fire"/>
+        <rdfs:comment xml:lang="en">A forest fire, also known as a wildfire, is an uncontrolled fire that spreads rapidly through forests, woodlands, or other areas with dense vegetation. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ForestFloorFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ForestFloorFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GroundFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FrequencyQuantity -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FrequencyQuantity">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Fruit -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Fruit">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#FunnelCloud -->
+
+    <owl:Class rdf:about="&disasterontology_v1;FunnelCloud">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tornado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Gale -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Gale">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Cyclone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Girl -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Girl">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#GlobalEmission -->
+
+    <owl:Class rdf:about="&disasterontology_v1;GlobalEmission">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ClimateChange"/>
+        <rdfs:comment xml:lang="en">Global emissions refer to the total amount of greenhouse gases (GHGs) released into the Earth&apos;s atmosphere from human activities on a global scale. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#GlobalWarming -->
+
+    <owl:Class rdf:about="&disasterontology_v1;GlobalWarming">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ClimateChange"/>
+        <rdfs:comment xml:lang="en">Global warming refers to the long-term increase in Earth&apos;s average surface temperature, primarily attributed to human activities such as the burning of fossil fuels, deforestation, and industrial processes. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Government -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Government">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Greenhouse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Greenhouse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GlobalEmission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#GroundFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;GroundFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fire"/>
+        <rdfs:comment xml:lang="en">A ground fire is a type of wildfire that burns primarily at or below the surface of the ground, typically in areas with abundant dry vegetation or organic material. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#GroundwaterDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;GroundwaterDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Habitat -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Habitat">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Ecological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#HailBarrage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;HailBarrage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hailstorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#HailShower -->
+
+    <owl:Class rdf:about="&disasterontology_v1;HailShower">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hailstorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#HailSquall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;HailSquall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hailstorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hailfall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hailfall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hailstorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hailstorm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hailstorm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A hailstorm is a weather phenomenon characterized by the occurrence of hail, which consists of balls or irregular lumps of ice that form within thunderstorm clouds and fall to the ground. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Harbour -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Harbour">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#HeavyRainfall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;HeavyRainfall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rain"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#HeavySnowfall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;HeavySnowfall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Help -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Help">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Highway -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Highway">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hit -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hit">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hospital -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hospital">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#House -->
+
+    <owl:Class rdf:about="&disasterontology_v1;House">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hurricane -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hurricane">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A hurricane is a powerful tropical storm characterized by strong winds, heavy rainfall, and low atmospheric pressure. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Hydrological -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Hydrological">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Drought"/>
+        <rdfs:comment xml:lang="en">Hydrological drought is a prolonged period of below-average water availability in rivers, streams, lakes, reservoirs, and groundwater aquifers.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Induce -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Induce">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Infrastructural -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Infrastructural">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Damage"/>
+        <hasPoS>ADJ</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Infrastructure -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Infrastructure">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Initiate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Initiate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Injure -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Injure">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Inshore -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Inshore">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Insufficient -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Insufficient">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Inundation -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Inundation">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Kill -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Kill">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Lack -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Lack">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Land -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Land">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#LandDisplacement -->
+
+    <owl:Class rdf:about="&disasterontology_v1;LandDisplacement">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Landslide -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Landslide">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#LastMonth -->
+
+    <owl:Class rdf:about="&disasterontology_v1;LastMonth">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#LastWeek -->
+
+    <owl:Class rdf:about="&disasterontology_v1;LastWeek">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#LastYear -->
+
+    <owl:Class rdf:about="&disasterontology_v1;LastYear">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#LeadTo -->
+
+    <owl:Class rdf:about="&disasterontology_v1;LeadTo">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Limit -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Limit">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Limited -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Limited">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Man -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Man">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#MeasurementQuantity -->
+
+    <owl:Class rdf:about="&disasterontology_v1;MeasurementQuantity">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Medical -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Medical">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Medicine -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Medicine">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Men -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Men">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Meteorological -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Meteorological">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Drought"/>
+        <rdfs:comment xml:lang="en">Meteorological drought is a prolonged period of significantly below-average precipitation in a specific region, resulting in dry conditions and water deficits. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Miss -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Miss">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Mobilise -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Mobilise">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Monitor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Monitor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Month -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Month">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Mortal -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Mortal">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasPoS>ADJ</hasPoS>
+        <hasDep>amod</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#MudFlow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;MudFlow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#MudSlump -->
+
+    <owl:Class rdf:about="&disasterontology_v1;MudSlump">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#MudTopple -->
+
+    <owl:Class rdf:about="&disasterontology_v1;MudTopple">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Topple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Mudslide -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Mudslide">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NDMA -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NDMA">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NDRF -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NDRF">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NGO -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NGO">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Navy -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Navy">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NearCoast -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NearCoast">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NearField -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NearField">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NearShore -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NearShore">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Necessary -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Necessary">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Need -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Need">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NetZero -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NetZero">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ClimateChange"/>
+        <rdfs:comment xml:lang="en">Net zero refers to achieving a balance between the amount of greenhouse gases emitted into the atmosphere and the amount removed or offset, resulting in no additional contribution to global warming. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NextMonth -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NextMonth">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#NextWeek -->
+
+    <owl:Class rdf:about="&disasterontology_v1;NextWeek">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Notification -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Notification">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Alert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Nurse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Nurse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Offshore -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Offshore">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Distant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Out -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Out">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Overflow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Overflow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Part -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Part">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#PeatFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;PeatFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GroundFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#People -->
+
+    <owl:Class rdf:about="&disasterontology_v1;People">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Period -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Period">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Pipeline -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Pipeline">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Plantation -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Plantation">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#PlateCollision -->
+
+    <owl:Class rdf:about="&disasterontology_v1;PlateCollision">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tectonic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Pollution -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Pollution">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ClimateChange"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Port -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Port">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#PrecipitationDought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;PrecipitationDought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Prior -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Prior">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Property -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Property">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>PROPN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Provoke -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Provoke">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Pulse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Pulse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Quantity -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Quantity"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Railway -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Railway">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Rain -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Rain">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RainDeficit -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RainDeficit">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RainfallDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RainfallDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Meteorological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RangeCount -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RangeCount">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Quantity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Rebuild -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Rebuild">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Recently -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Recently">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Reconstruct -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Reconstruct">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Recover -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Recover">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Refuge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Refuge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Regional -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Regional">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tsunami"/>
+        <rdfs:comment xml:lang="en">A regional tsunami is a type of tsunami that originates from a seismic event, such as an earthquake or volcanic eruption, occurring relatively close to the affected coastline. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Rehabilitate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Rehabilitate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Relief -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Relief">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Relocate -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Relocate">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Repair -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Repair">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Request -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Request">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Require -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Require">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RequirementTerms -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RequirementTerms">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Rescue -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Rescue">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Aftermath"/>
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Resource -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Resource"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Restore -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Restore">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RiverDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RiverDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Road -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Road">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RockFall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RockFall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Fall"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RockFlow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RockFlow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RockSlump -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RockSlump">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#RockTopple -->
+
+    <owl:Class rdf:about="&disasterontology_v1;RockTopple">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Topple"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Rockslide -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Rockslide">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Slide"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Runway -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Runway">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Salvage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Salvage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Sanitation -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Sanitation">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Satellite -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Satellite">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Save -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Save">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#School -->
+
+    <owl:Class rdf:about="&disasterontology_v1;School">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SedimentFlow -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SedimentFlow">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flows"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SeismicCollapse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SeismicCollapse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Collapse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Sewage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Sewage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Shelter -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Shelter">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Shoreline -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Shoreline">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Regional"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Shortage -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Shortage">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Since -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Since">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Slide -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Slide">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Landslide"/>
+        <rdfs:comment xml:lang="en">In the context of landslides, a &quot;slide&quot; refers to a type of mass movement where a cohesive mass of soil, rock, or debris moves along a well-defined surface or plane. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SnowBlast -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SnowBlast">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SnowFlurry -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SnowFlurry">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SnowSquall -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SnowSquall">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Snowstorm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Snowstorm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Socioeconomic -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Socioeconomic">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Drought"/>
+        <rdfs:comment xml:lang="en">Socioeconomic drought refers to a drought&apos;s impact on human populations and economic activities.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Soil -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Soil">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SoilFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SoilFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GroundFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Spark -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Spark">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SpatialData -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SpatialData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Srtike -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Srtike">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Storm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Storm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en">A violent disturbance of the atmosphere with strong winds and usually rain, thunder, lightning, or snow.
+Triggers: atmospheric pressure, strong jet-stream winds.
+Types: Thunderstorm, Tornado, Cyclone, Blizzard, Hailstorm, Hurricane.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Strand -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Strand">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#StreamflowDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;StreamflowDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Struck -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Struck">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#StructureCollapse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;StructureCollapse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Collapse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#StructureInstability -->
+
+    <owl:Class rdf:about="&disasterontology_v1;StructureInstability">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Collapse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Struggle -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Struggle">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Supply -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Supply">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Support -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Support"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SurfaceFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SurfaceFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;GroundFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#SurfaceWaterDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;SurfaceWaterDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Surge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Surge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Survivor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Survivor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Tectonic -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Tectonic">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Earthquake"/>
+        <rdfs:comment xml:lang="en">A tectonic earthquake is a seismic event caused by the sudden release of energy along geological faults due to the movement of tectonic plates in the Earth&apos;s crust. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TectonicTremor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TectonicTremor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tectonic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Tempest -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Tempest">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Cyclone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TemporalData -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TemporalData"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ThisMonth -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ThisMonth">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ThisWeek -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ThisWeek">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#ThisYear -->
+
+    <owl:Class rdf:about="&disasterontology_v1;ThisYear">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Thunderstorm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Thunderstorm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A thunderstorm is a weather phenomenon characterized by the occurrence of thunder and lightning, often accompanied by heavy rain, gusty winds, and sometimes hail.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Today -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Today">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TopFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TopFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;CrownFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Topple -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Topple">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Landslide"/>
+        <rdfs:comment xml:lang="en">Toppling occurs when the underlying support for the rock mass is weakened or eroded, causing it to lose stability and topple over. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TorchFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TorchFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;CrownFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Tornado -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Tornado">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Storm"/>
+        <rdfs:comment xml:lang="en">A tornado is a rapidly rotating column of air that extends from a thunderstorm to the ground, exhibiting a funnel-shaped cloud descending from the base of a cumulonimbus cloud.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TornadoFunnel -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TornadoFunnel">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tornado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TornadoVortex -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TornadoVortex">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tornado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Tower -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Tower">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Transoceanic -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Transoceanic">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Distant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Transport -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Transport">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Rescue"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TreetopFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TreetopFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;CrownFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Trigger -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Trigger">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ActionVerb"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>VERB</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Troop -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Troop">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#TropicalDepression -->
+
+    <owl:Class rdf:about="&disasterontology_v1;TropicalDepression">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Cyclone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Tsunami -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Tsunami">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Disaster"/>
+        <rdfs:comment xml:lang="en">Tsunamis are giant waves caused by earthquakes or volcanic eruptions under the sea. 
+Triggers: seafloor movement - earthquakes, volcanos, seamount collapse, meteorite impact.
+Types: Distant, Regional, Local.
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Twister -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Twister">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Tornado"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Upcoming -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Upcoming">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Period"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Urge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Urge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Urgent -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Urgent">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Vegetable -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Vegetable">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Agricultural"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Vegetation -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Vegetation">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Ecological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#VegetationFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;VegetationFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ForestFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Victim -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Victim">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Vigilance -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Vigilance">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Alert"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Villager -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Villager">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Vital -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Vital">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Volcanic -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Volcanic">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Earthquake"/>
+        <rdfs:comment xml:lang="en">A volcanic earthquake is a seismic event that occurs in association with volcanic activity, typically near or within volcanic regions. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#VolcanicTremblor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;VolcanicTremblor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Volcanic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#VolcanicTremor -->
+
+    <owl:Class rdf:about="&disasterontology_v1;VolcanicTremor">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Volcanic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Volunteer -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Volunteer">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Support"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Wait -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Wait">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;RequirementTerms"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Warehouse -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Warehouse">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Infrastructural"/>
+        <hasDep>nsubjpass</hasDep>
+        <hasPoS>NOUN</hasPoS>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Warning -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Warning">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Emergency"/>
+        <rdfs:comment xml:lang="en">A warning is a formal communication issued to alert individuals or communities about imminent or existing threats, hazards, or dangerous conditions that require immediate attention and action. </rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Water -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Water">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Resource"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#WaterDrought -->
+
+    <owl:Class rdf:about="&disasterontology_v1;WaterDrought">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Hydrological"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#WaterSurge -->
+
+    <owl:Class rdf:about="&disasterontology_v1;WaterSurge">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Flood"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Week -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Week">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Whirlwind -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Whirlwind">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Cyclone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Whiteout -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Whiteout">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Wildfire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Wildfire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ForestFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Wildlife -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Wildlife">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>ROOT</hasDep>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Windstorm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Windstorm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Cyclone"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#WinterStorm -->
+
+    <owl:Class rdf:about="&disasterontology_v1;WinterStorm">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Blizzard"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Woman -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Woman">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Women -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Women">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;AffectedEntity"/>
+        <hasDep>ROOT</hasDep>
+        <hasPoS>NOUN</hasPoS>
+        <hasDep>nsubjpass</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#WoodsFire -->
+
+    <owl:Class rdf:about="&disasterontology_v1;WoodsFire">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;ForestFire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Wound -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Wound">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;Casualty"/>
+        <hasPoS>VERB</hasPoS>
+        <hasDep>ROOT</hasDep>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Year -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Year">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Yesterday -->
+
+    <owl:Class rdf:about="&disasterontology_v1;Yesterday">
+        <rdfs:subClassOf rdf:resource="&disasterontology_v1;TemporalData"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Event1 -->
+
+    <owl:NamedIndividual rdf:about="&disasterontology_v1;Event1">
+        <deathCount rdf:datatype="&xsd;integer">70</deathCount>
+        <eventDate rdf:datatype="&xsd;string">July 30</eventDate>
+        <affected rdf:datatype="&xsd;string">people</affected>
+        <rdfs:comment>Represents the sentence: &quot;A landslide killed 70 people in Wayanad on July 30th.&quot;</rdfs:comment>
+        <causes rdf:resource="&disasterontology_v1;Fatal"/>
+        <hasDisaster rdf:resource="&disasterontology_v1;Landslide"/>
+        <hasLocation rdf:resource="&disasterontology_v1;Wayanad"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Fatal -->
+
+    <owl:NamedIndividual rdf:about="&disasterontology_v1;Fatal"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Landslide -->
+
+    <owl:NamedIndividual rdf:about="&disasterontology_v1;Landslide"/>
+    
+
+
+    <!-- http://www.semanticweb.org/lakshmisg/ontologies/2024/2/disasterOntology_V1#Wayanad -->
+
+    <owl:NamedIndividual rdf:about="&disasterontology_v1;Wayanad"/>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
