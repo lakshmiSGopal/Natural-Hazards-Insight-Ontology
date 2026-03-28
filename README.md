@@ -9,21 +9,8 @@ Once opened in Protégé, users can:
 - View individuals as example instances of disaster events.
 - Use the built-in SPARQL tab to run custom queries over the ontology and test reasoning-based use cases.
 
-As a companion to the associated research paper, this repository also includes a supplementary material PDF that provides in-depth documentation of the ontology.
-The final module of this work is an interactive dashboard, where the results of the Information Extraction (IE) system are presented for exploration and analysis. The dashboard is developed with Looker Studio, which can be accessed here: https://lookerstudio.google.com/reporting/3015dd47-e21d-4286-9893-1157c4f30d1a
+As a companion to the associated research paper, this repository also includes a supplementary material PDF that provides in-depth documentation of the ontology and the IE system.
 
-## Citation and Acknowledgment
-This ontology and its associated resources are developed as part of the research work titled:
-
-"A Generic Ontology-Driven Information Extraction and Impact Analysis of Hazards: A Case Study on the 2024 Wayanad Landslides"
-
-Authors: Lakshmi S. Gopal<sup>1</sup>, Hemalatha Thirugnanam<sup>1</sup>, Tejal Shah<sup>2</sup>, Maneesha Vinodini Ramesh<sup>1</sup>
-
-<sup>1</sup>Center for Wireless Networks & Applications (AWNA), Amrita Vishwa Vidyapeetham, Amritapuri, India
-
-<sup>2</sup>School of Computing, Newcastle University, Newcastle Upon Tyne, UK
-
-DOI: https://doi.org/10.5281/zenodo.15752551
 
 
 
